@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>MCC95 - Portfolio</title>
+
+    <link rel="stylesheet" href="lib/photoswipe.css">
+    <link rel="icon" href="images/logo.png" type="image/png" size="32x32">
+
+    <script src="lib/photoswipe-lightbox.umd.min.js"></script>
+    <script src="lib/photoswipe.umd.min.js"></script>
+   
+
+
+</head>
+
+
+<body>
+    <div class="logo">
+        <a href="https://mcc95.info">
+            <img id="logoImg" src="images/logoGross.png" alt="MCC Logo" width="10%" height="10%">
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a href="gallery/7a826852-b2b2-4515-861c-f1289cbfac18.jpg">
+            <img src="gallery/7a826852-b2b2-4515-861c-f1289cbfac18.jpg" alt="Image 1">
+        </a>
+        <a href="gallery/buch1.jpg"
+        data-pswp-caption="test test test" >
+            <img src="gallery/buch1.jpg" alt="Image 2">
+            
+        </a>
+        <a href="gallery/buch2.jpg" >
+            <img src="gallery/buch2.jpg" alt="Image 3">
+        </a>
+        <a href="gallery/cheers.jpg" >
+            <img src="gallery/cheers.jpg" alt="Image 4">
+        </a>
+        <a href="gallery/cheersfenster.jpg" >
+            <img src="gallery/cheersfenster.jpg" alt="Image 5">
+        </a>
+        <a href="gallery/ELLogoKonzeption.jpg" >
+            <img src="gallery/ELLogoKonzeption.jpg" alt="Image 6">
+        </a>
+        <a href="gallery/elkeaßmus.PNG" >
+            <img src="gallery/elkeaßmus.PNG" alt="Image 7">
+        </a>
+        <a href="gallery/myRoomFinal_Light2.png" >
+            <img src="gallery/myRoomFinal_Light2.png" alt="Image 8">
+        </a>
+        <a href="gallery/hirschmensch.png" >
+            <img src="gallery/hirschmensch.png" alt="Image 9">
+        </a>
+        <a href="gallery/deathstareclipse.png" >
+            <img src="gallery/deathstareclipse.png" alt="Image 10">
+        </a>
+        <a href="gallery/coca.jpg" >
+            <img src="gallery/coca.jpg" alt="Image 11">
+        </a>
+        <a href="gallery/holoHead.jpg" >
+            <img src="gallery/holoHead.jpg" alt="Image 12">
+        </a>
+        <a href="gallery/astroboi.png" >
+            <img src="gallery/astroboi.png" alt="Image 13">
+        </a>
+        <a href="gallery/landscaperender.png" >
+            <img src="gallery/landscaperender.png" alt="Image 14">
+        </a>
+        <a href="gallery/mechaRender8.png" >
+            <img src="gallery/mechaRender8.png" alt="Image 15">
+        </a>
+        <a href="gallery/kopf.jpg" >
+            <img src="gallery/kopf.jpg" alt="Image 16">
+        </a>
+        <a href="gallery/mayflashf300templateartwork.png" >
+            <img src="gallery/mayflashf300templateartwork.png" alt="Image 17">
+        </a>
+        <a href="gallery/pepper1.PNG" >
+            <img src="gallery/pepper1.PNG" alt="Image 18">
+        </a>
+        <a href="gallery/render_boat_image.png" >
+            <img src="gallery/render_boat_image.png" alt="Image 19">
+        </a>
+        <a href="gallery/spacestationImage9.png" >
+            <img src="gallery/spacestationImage9.png" alt="Image 20">
+        </a>
+        <a href="gallery/tankDesertrender2.png" >
+            <img src="gallery/tankDesertrender2.png" alt="Image 21">
+        </a>
+        <a href="gallery/spaceKopf.jpg" >
+            <img src="gallery/spaceKopf.jpg" alt="Image 22">
+        </a>
+        <a href="gallery/roboRender.png" >
+            <img src="gallery/roboRender.png" alt="Image 23">
+        </a>
+        <a href="gallery/techTempleREC.png" >
+            <img src="gallery/techTempleREC.png" alt="Image 24">
+        </a>
+        <a href="gallery/techTempleRenderTest7.png" >
+            <img src="gallery/techTempleRenderTest7.png" alt="Image 25">
+        </a>
+        <a href="gallery/renderRoom.jpg" >
+            <img src="gallery/renderRoom.jpg" alt="Image 26">
+        </a>
+        <a href="gallery/mozart.jpg" >
+            <img src="gallery/mozart.jpg" alt="Image 27">
+        </a>
+        <a href="gallery/brownTank3.png" >
+            <img src="gallery/brownTank3.png" alt="Image 28">
+        </a>
+        <a href="gallery/caveRender1.png" >
+            <img src="gallery/caveRender1.png" alt="Image 29">
+        </a>
+    </div>
+
+    <script>
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '.gallery', 
+            children: 'a',
+            imageClickAction: 'next',
+            tapAction: 'next',
+            showHideAnimationType: 'fade',
+            pswpModule: PhotoSwipe ,
+            caption:function (slide){
+                return slide.data.pswpCaption || '';
+            }
+        });
+        lightbox.init();
+    </script>
+
+</body>
+</html>

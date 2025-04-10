@@ -1,0 +1,180 @@
+.nav {
+    height: 80px;
+    width: 100%;
+    background-color: #000020;
+    position: fixed;
+    z-index:9999;
+}
+
+.nav>.nav-header {
+    display: inline;
+}
+
+.nav>.nav-header>.nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 5px 15px 15px 15px;
+    z-index: 9999;
+
+}
+
+.nav>.nav-btn {
+    display: none;
+}
+
+.nav>.nav-links {
+    display: inline;
+    float: right;
+    font-size: 23px;
+}
+
+.nav>.nav-links>a {
+    display: inline-block;
+    text-align: center;
+    padding: 25px 75px 28px 75px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav>.nav-links>a:hover {
+    background-color: #fff;
+    color: #000020;
+
+}
+
+.nav>#nav-check {
+    display: none;
+}
+
+@media (max-width:600px) {
+    .nav>.nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        z-index: 9999;
+    }
+
+    .nav>.nav-btn>label {
+        display: inline-block;
+        width: 60px;
+        height: 80px;
+        padding: 8px;
+        margin: 10px;
+        z-index: 9999;
+    }
+
+    .nav>.nav-btn>label:hover,
+    .nav #nav-check:checked~.nav-btn>label {
+        background-color: #fff;
+
+    }
+
+    .nav>.nav-btn>label>span {
+        display: block;
+        width: 30px;
+        height: 12px;
+        border-top: 2px solid #c0c0c0;
+        z-index: 9999;
+    }
+
+
+
+    .nav>.nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #000020;
+        height: 0px;
+        transition: all 0.4s ease-in-out;
+        overflow-y: hidden;
+        top: 80px;
+        left: 0px;
+        z-index: 9999;
+    }
+
+    .nav>.nav-links>a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 55px;
+    }
+
+    .nav>#nav-check:not(:checked)~.nav-links {
+        height: 0px;
+    }
+
+    .nav>#nav-check:checked~.nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+}
+
+
+@media (max-width:1200px) {
+    .nav>.nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        z-index: 9999;
+    }
+
+    .nav>.nav-btn>label {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        padding: 15px;
+        margin: 10px;
+        z-index: 9999;
+    }
+
+    .nav>.nav-btn>label:hover,
+    .nav #nav-check:checked~.nav-btn>label {
+        background-color: #fff;
+        z-index: 9999;
+    }
+
+    .nav>.nav-btn>label>span {
+        display: block;
+        width: 30px;
+        height: 12px;
+        border-top: 2px solid #555;
+        z-index: 9999;
+    }
+
+
+
+    .nav>.nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #000020;
+        height: 0px;
+        transition: all 0.4s ease-in-out;
+        overflow-y: hidden;
+        top: 80px;
+        left: 0px;
+        z-index: 9999;
+    }
+
+    .nav>.nav-links>a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 60px;
+        z-index: 9999;
+    }
+
+    .nav>#nav-check:not(:checked)~.nav-links {
+        height: 0px;
+        z-index: 9999;
+    }
+
+    .nav>#nav-check:checked~.nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+        z-index: 9999;
+    }
+}

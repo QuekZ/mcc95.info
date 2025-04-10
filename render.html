@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>MCC95 - Portfolio</title>
+    <link rel="stylesheet" href="css/canvas.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/logo.png" type="image/png" size="32x32">
+    <!-- Three.js and dependencies -->
+    <script src="lib/three.js/build/three.min.js"></script>
+    <script src="javascript/Stats.js"></script>
+    <script src="postprocessing/EffectComposer.js"></script>
+    <script src="postprocessing/RenderPass.js"></script>
+    <script src="postprocessing/GlitchPass.js"></script>
+    <!-- Render script -->
+    <script src="javascript/render.js"></script>
+</head>
+<body>
+    <div id="renderCanvas"></div>
+    <script>
+        // Initialize the scene after the DOM is fully loaded
+        window.onload = init;
+    </script>
+</body>
+</html>

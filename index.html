@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCC95 - Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png" type="image/png" sizes="32x32">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/scrollbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="javascript/navbar.js" defer></script>
+    <script src="javascript/changeWord.js" defer></script>
+    <script src="javascript/script.js" defer></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const iframe = document.getElementById('background');
+            window.addEventListener('wheel', (event) => {
+                if (iframe && iframe.contentWindow) {
+                    iframe.contentWindow.postMessage({ type: 'scroll', deltaY: event.deltaY }, '*');
+                }
+            });
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+    const iframe = document.getElementById('background');
+
+    // Forward scroll events
+    window.addEventListener('wheel', (event) => {
+        if (iframe && iframe.contentWindow) {
+            iframe.contentWindow.postMessage({ type: 'scroll', deltaY: event.deltaY }, '*');
+        }
+    });
+
+    // Forward mousemove events
+    window.addEventListener('mousemove', (event) => {
+        const mouseX = event.clientX / window.innerWidth;
+        const mouseY = event.clientY / window.innerHeight;
+
+        if (iframe && iframe.contentWindow) {
+            iframe.contentWindow.postMessage({
+                type: 'mousemove',
+                x: mouseX,
+                y: mouseY
+            }, '*');
+        }
+    });
+});
+
+// Forward click events
+window.addEventListener('click', () => {
+    const iframe = document.getElementById('background');
+    if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage({ type: 'click' }, '*');
+    }
+});
+
+    </script>
+</head>
+<body>
+    <!-- 3D Background -->
+    <iframe id="background" src="render.html" title="3D Background"></iframe>
+
+    <!-- Navigation Bar -->
+    <div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+            <div class="nav-title">
+                <a href="https://mcc95.info">
+                    <img id="logoImg" src="images/logoGross.png" alt="MCC Logo" width="35%" height="35%">
+                </a>
+            </div>
+        </div>
+        <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <div id="loader">
+            <img id="logoSpin" src="images\logo.png">
+            <p>Loading...</p>
+        </div>
+        <div class="nav-links">
+            <a id="nav-button" href="#HOME"><b>HOME</b></a>
+            <a id="nav-button" href="#ABOUT"><b>ABOUT</b></a>
+            <a id="nav-button" href="#PROJECTS"><b>PROJECTS</b></a>
+            <a id="nav-button" href="#CONTACT"><b>CONTACT</b></a>
+        </div>
+    </div>
+
+    <!-- Sections -->
+    <section id="HOME">
+        <div id="content">
+            <h1>Hello World!</h1>
+            <h2>My Name is Mehmet Can and I like to create Stuff!</h2>
+            <h2>My Interests are: <span id="changeWord" style="background-color:#000020; padding: 0.08em;">Web Development</span></h2>
+        </div>
+    </section>
+
+    <section id="ABOUT">
+        <div id="content">
+            <h1>ABOUT</h1>
+            <p><b>I like to combine creativity with logic!</b> That's why I love Web Development. Building beautiful websites with rich functionalities to bring an excellent User Experience.</p>
+            <div id="content-inside">
+                <p>These are some of the Technologies and Languages I know about:</p>
+                <ul id="skills">
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>Bootstrap</li>
+                    <li>TypeScript</li>
+                    <li>Java</li>
+                    <li>Node.js</li>
+                    <li>Three.js</li>
+                    <li>React.js</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="PROJECTS">
+        <div id="content">
+            <h1>PROJECTS</h1>
+            <p><b>Here are some projects I worked on:</b></p>
+            <ul>
+                <p id="project-background">This website, made with basic HTML, CSS, JavaScript, and the <a href="https://threejs.org" target="_blank" rel="noopener">Three.js</a> library for 3D rendering. The background is an iframe with a 3D-rendered particle system.</p>
+                <p id="project-background"><a href="gallery.html" target="_blank" rel="noopener"><button id="project-button">Gallery</button></a> A small Gallery with Artworks and Designs that I made for different Projects. These are made with Photoshop, Illustrator and Blender</p>
+                <p id="project-background"><a href="https://github.com/QuekZ/foodMenuHegauImbiss2" target="_blank" rel="noopener"><button id="project-button">Food Menu</button></a> for a takeaway kebab shop, made with Vite and React, running on a Raspberry Pi 3.</p>
+                <p id="project-background"><a href="https://github.com/QuekZ/ThreeJSExperiments" target="_blank" rel="noopener"><button id="project-button">Three.js Experiments</button></a> to learn more about 3D rendering in the browser.</p>
+                <p id="project-background"><a href="https://github.com/QuekZ/WebVR_Test" target="_blank" rel="noopener"><button id="project-button">WebXR Demo</button></a> to gain experience with VR and the Three.js library</p>
+            </ul>
+        </div>
+    </section>
+
+    <section id="CONTACT">
+        <div id="content">
+            <h1>CONTACT</h1>
+            <p><b>Let's get in touch!</b></p>
+            <p>Email: Mehmet-CanZ@web.de</p>
+            <p>GitHub: <a href="https://github.com/QuekZ" target="_blank" rel="noopener">My GitHub</a></p>
+        </div>
+    </section>
+
+    <section id="FOOTER">
+        <div id="footer-content">
+            <p>Made by Mehmet Can Celik 2025</p>
+        </div>
+    </section>
+</body>
+</html>
