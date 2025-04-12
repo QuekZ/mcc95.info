@@ -3,6 +3,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 iframe#background {
     pointer-events: none;
 }
@@ -36,6 +37,14 @@ h1 {
     background-color: #000020;
     text-align: center;
 }
+
+
+h2 {
+    font-size:45pt;
+}
+
+
+
 
 li {
     position: relative;
@@ -80,11 +89,12 @@ li {
 #content {
     position:relative;
     padding: 1em;
+    padding-top:2em;
     z-index:50;
     width: 75%;
     top: 50%;
     left:12.5%;
-    margin-bottom:3em;
+    margin-bottom:10em;
     background: rgba(63, 63, 63, 0.1); /* Transparent white background */
     backdrop-filter: blur(10px); /* Blur the background */
     -webkit-backdrop-filter: blur(10px); /* Safari support */
@@ -137,7 +147,6 @@ li {
 }
 
 #content>* {
-
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;

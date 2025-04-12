@@ -108,37 +108,64 @@ renderer.setSize(window.innerWidth, window.innerHeight);
     const normalTexture2 = textureLoader.load('texture/normalMapMetal7.png');
     //const normalTexture3 = textureLoader.load('texture/normalMapMetal3.png')
     const mapArray = [normalTexture, normalTexture2,/*normalTexture3*/]
+
+    /*const loader = new THREE.GLTFLoader();
+    loader.load('3dmodels/mcc95logo.glb', function (gltf){
+        const logo = gltf.scene;
+
+        particle.add(logo);
+    }, undefined, function (error){
+        console.error('An error happened while loading the GLTF:', error);
+    });*/
     
 
-    let geometry = new THREE.SphereBufferGeometry(6,4,4);
-    for (var i = 0; i < 200; i++) {
-        const randomNormalMap = mapArray[Math.floor(Math.random() * mapArray.length)];
-        const randomMaterial = new THREE.MeshStandardMaterial({
-            color: 0x000000,
-            roughness: 0.2,
-            metalness: 0.1,
-            emissive: 0x000055,
-            normalMap: randomNormalMap
-        });
-    
-        mesh = new THREE.Mesh(geometry, randomMaterial);
-    
-        mesh.position.set(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize();
-        mesh.position.multiplyScalar(50 + (Math.random() * 65));
-        mesh.rotation.set(Math.random() * 2, Math.random() * 2, Math.random() * 2);
-    
-        const randomScale = Math.random() * 0.5 + 0.5; 
-        mesh.scale.set(randomScale, randomScale, randomScale);
-    
-       
-        mesh.rotationSpeed = {
-            x: Math.random() * 0.02 - 0.01, 
-            y: Math.random() * 0.02 - 0.01,
-            z: Math.random() * 0.02 - 0.01
-        };
-    
-        particle.add(mesh);
-    }
+
+
+    let geometry = new THREE.SphereBufferGeometry(6, 4, 4);
+
+for (let i = 0; i < 200; i++) {
+    const randomNormalMap = mapArray[Math.floor(Math.random() * mapArray.length)];
+    const randomMaterial = new THREE.MeshStandardMaterial({
+        color: 0x000000,
+        roughness: 0.2,
+        metalness: 0.1,
+        emissive: 0x000055,
+        normalMap: randomNormalMap
+    });
+
+    let mesh = new THREE.Mesh(geometry, randomMaterial);
+
+    mesh.position.set(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize();
+    mesh.position.multiplyScalar(50 + (Math.random() * 65));
+    mesh.rotation.set(Math.random() * 2, Math.random() * 2, Math.random() * 2);
+
+    const randomScale = Math.random() * 0.5 + 0.5;
+    mesh.scale.set(randomScale, randomScale, randomScale);
+
+    mesh.rotationSpeed = {
+        x: Math.random() * 0.02 - 0.01,
+        y: Math.random() * 0.02 - 0.01,
+        z: Math.random() * 0.02 - 0.01
+    };
+
+    particle.add(mesh);
+}
+
+
+const loader = new THREE.GLTFLoader();
+loader.load('3dmodels/mcc95logo.glb', function (gltf) {
+    const logo = gltf.scene;
+
+  
+    logo.scale.set(15, 15, 15);
+    logo.position.set(0, 0, 0);
+
+    //logo.rotationSpeed = { x: 0.005, y: 0.01, z: 0 };
+
+    particle.add(logo);
+}, undefined, function (error) {
+    console.error('An error happened while loading the GLTF:', error);
+});
 
 
     
@@ -187,10 +214,12 @@ renderer.setSize(window.innerWidth, window.innerHeight);
         particle.rotation.y += (targetRotation.x * Math.PI - particle.rotation.y) * 0.005;
         particle.rotation.x += (targetRotation.y * Math.PI / 4 - particle.rotation.x) * 0.005;
   
-        particle.children.forEach(mesh => {
-            mesh.rotation.x += mesh.rotationSpeed.x;
-            mesh.rotation.y += mesh.rotationSpeed.y;
-            mesh.rotation.z += mesh.rotationSpeed.z;
+        particle.children.forEach(child => {
+            if (child.rotationSpeed) {
+                child.rotation.x += child.rotationSpeed.x;
+                child.rotation.y += child.rotationSpeed.y;
+                child.rotation.z += child.rotationSpeed.z;
+            }
         });
 
         currentScale += (targetScale - currentScale) * 0.1;
