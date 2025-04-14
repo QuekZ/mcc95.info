@@ -231,7 +231,7 @@ a:hover {
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
 
     html,
     body {
@@ -249,20 +249,29 @@ a:hover {
         text-align: center;
     }
 
+    h2 {
+        font-size: 30pt;
+    }
+
+
+    p{
+        font-size:15pt;
+    }
+
     li {
         position: relative;
         background-color:#000020;
         border-radius: 5px;
         margin:5px;
         width: 80%;
-        left: 5%;
+        left: 10%;
         font-size: 15pt;
     }
 
 
     #content {
         padding: 2em;
-
+        align-items: center;
     }
 
     #glassDiv {

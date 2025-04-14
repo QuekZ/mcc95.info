@@ -153,7 +153,7 @@ for (let i = 0; i < 200; i++) {
 
 
 const loader = new THREE.GLTFLoader();
-loader.load('3dmodels/mcc95logo.glb', function (gltf) {
+loader.load('3dmodels/mcc95logoTest.glb', function (gltf) {
     const logo = gltf.scene;
 
   
