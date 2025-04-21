@@ -46,13 +46,39 @@ h2 {
 
 
 
-li {
+/*li {
     position: relative;
     background-color:#000020;
     border-radius: 5px;
     margin:5px;
     width: 50%;
     left: 25%;
+}*/
+
+#skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+    list-style: none;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+#skills li {
+    background-color: #000020;
+    font-size: 15pt;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+#skills li:hover {
+    transform: scale(1.05);
+    color:#000020;
+    background-color: #e0e0e0;
 }
 
 
@@ -78,7 +104,7 @@ li {
     position: relative;
     padding:0.5em;
     background-color:#000020;
-    border-radius: 5px;
+    border-radius: 2px;
     margin:5px;
     width: 100%;
     left: -3%;
@@ -91,9 +117,9 @@ li {
     padding: 1em;
     padding-top:2em;
     z-index:50;
-    width: 75%;
+    width: 100%;
     top: 50%;
-    left:12.5%;
+    /*left:12.5%;*/
     margin-bottom:10em;
     background: rgba(63, 63, 63, 0.1); /* Transparent white background */
     backdrop-filter: blur(10px); /* Blur the background */
@@ -220,6 +246,51 @@ a:hover {
     height: 100px;
     animation: spin 1s linear infinite;
 }
+
+#projects {
+    font-size: 30pt;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.75rem;
+    list-style: none;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+#projects li {
+    background-color: #000020;
+    font-size: 15pt;
+    padding: 1.2rem;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    color: #ffffff;
+}
+
+#projects li:hover {
+    font-size:17pt;
+    background-color: #1a1a3c;
+}
+
+#project-button {
+    font-size: 21pt;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.5rem;
+    background-color: #ffffff;
+    color: #000020;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+#project-button:hover {
+    font-size: 23pt;
+    color: white;
+    background-color: #000020;
+}
+
 
 @keyframes spin {
     0% {

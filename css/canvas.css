@@ -1,4 +1,66 @@
-#canvasrender {
-    position: relative;
-    overflow: hidden;
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+iframe#background {
+    pointer-events: none;
+}
+
+
+
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+
+}
+
+html,
+body {
+    height: 100vh;
+    margin: 0;
+
+}
+
+
+
+
+#background {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    pointer-events: none;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+
+}
+
+
+
+
+
+
+
+
+@media (max-width: 900px) {
+
+    html,
+    body {
+        height: 100vh;
+        margin: 0;
+        
+    }
+
+
+
 }

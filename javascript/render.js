@@ -153,7 +153,7 @@ for (let i = 0; i < 200; i++) {
 
 
 const loader = new THREE.GLTFLoader();
-loader.load('3dmodels/mcc95logo.glb', function (gltf) {
+loader.load('3dmodels/mcc95logoTest.glb', function (gltf) {
     const logo = gltf.scene;
 
   
@@ -311,7 +311,7 @@ loader.load('3dmodels/mcc95logo.glb', function (gltf) {
 
 window.addEventListener('message', (event) => {
     if (event.data.type === 'click') {
-        targetScale = targetScale === 1 ? -0.5 : 1 ;
+        targetScale = targetScale === 1 ? 0.5 : 1 ;
     }
 
     if (event.data.type === 'mousemove') {
